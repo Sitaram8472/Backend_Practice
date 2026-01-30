@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wahtapp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h3>All chats</h3>
+
+  <form method="GET" action="/chats/newchat">
+    <button>new chat</button>
+  </form>
+  <br>
+  <% for(let chat of chats){ %>
+  <div class="chat">
+    <p>form : <%= chat.from %></p>
+    <div class="msg">
+      <p><%= chat.message %></p>
+      <form method="GET" action="/chats/<%= chat._id%>/edit">
+        <button>edit</button>
+      </form>
+      <br>
+       <form method="POST" action="/chats/<%= chat._id%>/?_method=delete">
+        <button>delete</button>
+      </form>
+    </div>
+    <hr>
+    <p>Received by : <%= chat.to %></p>
+    <hr>
+    <p><%= chat.created_at.toString().split(" ")[4]  %></p>
+    <p><%= chat.created_at.toString().split(" ").splice(0, 4).join(" ")  %></p>
+  </div>
+<%} %>
+</body>
+</html>
+

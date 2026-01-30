@@ -1,0 +1,20 @@
+.quora{
+  color: maroon;
+}
+.main{
+  background-color: pink;
+  width: 20%;
+  height: 140px;
+}
+.edit{
+  display: flex;
+  gap: 15px;
+}
+.posts{
+  color: rebeccapurple;
+  padding: 5px;
+}
+.content{
+  color: blue;
+  padding: 5px;
+}

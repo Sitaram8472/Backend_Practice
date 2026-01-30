@@ -1,0 +1,19 @@
+<%- include("includes/head.ejs")  %>
+    <h2>This page belongs to @<%= data.name %></h2>
+
+    <p>
+      followers <%= data.followers %> &nbsp;&nbsp; following <%= data.following
+      %>
+    </p>
+    <hr />
+
+    <% for (let post of data.posts) { %>
+    <img src="<%= post.image %>" alt="img" />
+    <p>likes <%= post.likes %> &nbsp;&nbsp; comments <%= post.comments %></p>
+    <% } %>
+    <!-- footer section include -->
+     <%- include("includes/footer.ejs")  %>
+  </body>
+
+  <script src="/script.js"></script>
+</html>
